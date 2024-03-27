@@ -37,8 +37,15 @@ const getWishListFromLS = () => {
 const setWishListToLS = (book) => {
     const wishList = getWishListFromLS();
     const isExist = wishList.find(wish => wish.bookId === book.bookId);
+    // 
+    const readBook = getItemFromLS();
+    const findRead = readBook.find(read => read.bookId === book.bookId);
+
     if(isExist) {
         toast.warning('The book already listed to "Wishlist Books"!');
+    }
+    else if(findRead) {
+        toast.error('The book already read!')
     }
     else{
         wishList.push(book);
