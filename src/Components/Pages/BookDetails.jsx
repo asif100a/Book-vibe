@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { setItemToLS } from "../../Utils/utils";
 
 const BookDetails = () => {
     const bookData = useLoaderData();
@@ -20,7 +21,7 @@ const BookDetails = () => {
     // console.log(bookName);
 
     const handleReadBook = (book) => {
-        console.log(book);
+        setItemToLS(book);
     };
 
 

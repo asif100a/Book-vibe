@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReadBook from "../Parts/ReadBook";
+import { getItemFromLS } from "../../Utils/utils";
 
 const ListedBooks = () => {
     const [tab, setTab] = useState(0);
+    const storedBooks = getItemFromLS();
 
     return (
         <div>
@@ -15,7 +17,7 @@ const ListedBooks = () => {
 
             <div className="flex justify-center items-center">
                 <div className="inline-flex items-center rounded-lg bg-[#23BE0A] text-white mt-8 btn">
-                    <button type="button" className="pl-4 py-3 font-medium">Short by</button>
+                    <button type="button" className="pl-4 py-3 font-semibold">Short by</button>
                     <button type="button" title="Toggle dropdown" className="p-3">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -39,9 +41,9 @@ const ListedBooks = () => {
 
             <div className="flex flex-col mt-12">
                 
-                <ul className="flex flex-col">
+                <ul className="flex flex-col gap-6">
                     {
-                        <ReadBook></ReadBook>
+                        storedBooks.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
                     }
                     
                 </ul>

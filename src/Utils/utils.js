@@ -1,11 +1,23 @@
 const getItemFromLS = () => {
-    const getItem = localStorage.getItem('item');
-    if(getItem){
-        return getItem;
+    let store = [];
+    const storedBooks = localStorage.getItem('books');
+    if(storedBooks){
+        store = JSON.parse(storedBooks);
     }
-    return [];
+    return store;
 };
 
-const setItemToLS = () => {
-    
+const setItemToLS = (book) => {
+    const books = getItemFromLS();
+    const isExist = books.find(savedBook => savedBook.bookId === book.bookId);
+    if(isExist) {
+       return alert('Book already enrolled!');
+    }
+    else{
+        books.push(book);
+        localStorage.setItem('books', JSON.stringify(books));
+        return alert('Book anrolled.')
+    }
 };
+
+export {getItemFromLS, setItemToLS};
