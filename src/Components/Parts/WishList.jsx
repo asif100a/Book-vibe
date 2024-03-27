@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { CiLocationOn } from "react-icons/ci";
+import { IoDocumentTextOutline, IoPeopleOutline } from 'react-icons/io5';
 
 const WishList = ({book}) => {
     const { bookId,
@@ -29,17 +31,17 @@ const WishList = ({book}) => {
                         <div className="flex gap-4 items-center">
                             <p className="flex gap-3"><span className="font-bold">Tag</span>{tags.map((tag, i) => <span className="bg-gray-100 text-[#23BE0A] font-medium py-[3px] px-3 rounded-full" key={i}>#{tag}</span>)}</p>
                             
-                            <p><span></span> <span>Year of Publishing: {yearOfPublishing}</span></p>
+                            <p className='flex gap-1'><span><CiLocationOn className='w-6 h-6' /></span> <span>Year of Publishing: {yearOfPublishing}</span></p>
                         </div>
 
                     </div>
                     <div className="flex text-sm">
                         <button type="button" className="flex items-center px-2 py-1 pl-0 space-x-1">
-
+                        <span><IoPeopleOutline className="w-6 h-6 mr-1" /></span>
                             <span>Publisher : {publisher}</span>
                         </button>
                         <button type="button" className="flex items-center px-2 py-1 space-x-1">
-
+                        <span><IoDocumentTextOutline className="w-6 h-6 mr-1" /></span>
                             <span>Page : {totalPages}</span>
                         </button>
                     </div>

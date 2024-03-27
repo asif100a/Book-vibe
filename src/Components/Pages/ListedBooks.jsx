@@ -25,12 +25,12 @@ const ListedBooks = () => {
 
             <div className="flex overflow-x-auto overflow-y-hidden  flex-nowrap dark:text-gray-800 mt-8">
 
-                <Link onClick={() => setTab(0)} to={''} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-b-2' || 'border-2 border-b-0'} rounded-t-lg dark:border-gray-200 dark:text-gray-900`}>
+                <Link onClick={() => setTab(0)} to={''} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-b-2 text-gray-400' || 'border-2 border-b-0 text-gray-900'} rounded-t-lg font-semibold dark:border-gray-200`}>
 
                     <span>Read Books</span>
                 </Link>
                 
-                <Link onClick={() => setTab(1)} to={`wishlist`} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-2 border-b-0' || 'border-b-2'} rounded-t-lg dark:border-gray-200 dark:text-gray-600`}>
+                <Link onClick={() => setTab(1)} to={`wishlist`} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-2 border-b-0 text-gray-900' || 'border-b-2 text-gray-400'} rounded-t-lg font-semibold dark:border-gray-200`}>
 
                     <span>Wishlist Books</span>
                 </Link>
