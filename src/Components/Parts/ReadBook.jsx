@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const ReadBook = ({ book }) => {
     const { bookId,
         bookName,
         author,
         image,
-        review,
         totalPages,
         rating,
         category,
         tags,
-        publisher,
-        yearOfPublishing } = book;
+        publisher, } = book;
 
     return (
         <li className="flex flex-col pt-6 pb-2 px-6 sm:flex-row sm:justify-between border-2 rounded-xl">
@@ -55,7 +54,7 @@ const ReadBook = ({ book }) => {
                             Rating : {rating}
                         </p>
                         <Link to={`/details/${bookId}`}>
-                            <button type="button" className="px-6 py-2 border-none rounded-full font-medium bg-[#23BE0A] text-gray-900 dark:text-gray-50 border-violet-400 dark:border-violet-600">
+                            <button type="button" className="btn h-10 min-h-10 border-none rounded-full font-medium bg-[#23BE0A] text-gray-900 dark:text-gray-50 border-violet-400 dark:border-violet-600">
                                 View Details
                             </button>
                         </Link>
@@ -64,6 +63,11 @@ const ReadBook = ({ book }) => {
             </div>
         </li>
     );
+};
+
+
+ReadBook.propTypes = {
+    book: PropTypes.object
 };
 
 export default ReadBook;

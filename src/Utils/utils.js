@@ -1,22 +1,24 @@
+import { toast } from "react-toastify";
+
 const getItemFromLS = () => {
-    let store = [];
+    let storeRead = [];
     const storedBooks = localStorage.getItem('books');
     if(storedBooks){
-        store = JSON.parse(storedBooks);
+        storeRead = JSON.parse(storedBooks);
     }
-    return store;
+    return storeRead;
 };
 
 const setItemToLS = (book) => {
     const books = getItemFromLS();
     const isExist = books.find(savedBook => savedBook.bookId === book.bookId);
     if(isExist) {
-       return alert('Book already enrolled!');
+        toast.warning('The book already listed!')
     }
     else{
         books.push(book);
         localStorage.setItem('books', JSON.stringify(books));
-        return alert('Book anrolled.')
+        toast.success('The book listed successfully');
     }
 };
 

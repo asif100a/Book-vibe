@@ -7,7 +7,7 @@ const BookDetails = () => {
 
     const book = bookData.find(data => data.bookId == id);
 
-    const { bookId,
+    const {
         bookName,
         author,
         image,
@@ -18,10 +18,13 @@ const BookDetails = () => {
         tags,
         publisher,
         yearOfPublishing } = book;
-    // console.log(bookName);
 
     const handleReadBook = (book) => {
         setItemToLS(book);
+    };
+
+    const handleWishlist = (book) => {
+        
     };
 
 
@@ -59,7 +62,7 @@ const BookDetails = () => {
                         </div>
                         <div className="flex justify-start gap-4 pt-6">
                             <button onClick={() => handleReadBook(book)} type="button" className="btn px-6 py-3 text-base font-semibold rounded-md dark:bg-gray-50 border-2 border-[#a89898]">Read</button>
-                            <button type="button" className="btn px-6 py-3 text-base text-white font-semibold rounded-md bg-[#50B1C9]">Wishlist</button>
+                            <button onClick={() => handleWishlist(book)} type="button" className="btn px-6 py-3 text-base text-white font-semibold rounded-md bg-[#50B1C9]">Wishlist</button>
                         </div>
                     </div>
                 </div>

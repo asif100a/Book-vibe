@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import ReadBook from "../Parts/ReadBook";
-import { getItemFromLS } from "../../Utils/utils";
+import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
     const [tab, setTab] = useState(0);
-    const storedBooks = getItemFromLS();
 
     return (
         <div>
@@ -32,7 +29,8 @@ const ListedBooks = () => {
 
                     <span>Read Books</span>
                 </Link>
-                <Link onClick={() => setTab(1)} to={'wishlist'} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-2 border-b-0' || 'border-b-2'} rounded-t-lg dark:border-gray-200 dark:text-gray-600`}>
+                
+                <Link onClick={() => setTab(1)} to={`wishlist`} className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab && 'border-2 border-b-0' || 'border-b-2'} rounded-t-lg dark:border-gray-200 dark:text-gray-600`}>
 
                     <span>Wishlist Books</span>
                 </Link>
@@ -40,15 +38,7 @@ const ListedBooks = () => {
             </div>
 
             <div className="flex flex-col mt-12">
-                
-                <ul className="flex flex-col gap-6">
-                    {
-                        storedBooks.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
-                    }
-                    
-                </ul>
-                
-               
+                <Outlet></Outlet>
             </div>
         </div>
     );
