@@ -30,10 +30,10 @@ const BookDetails = () => {
 
     return (
         <section className="bg-white">
-            <div className="container p-6 mx-auto space-y-6 sm:space-y-12">
-                <div className="flex gap-4">
-                    <div className="w-[72em] bg-gray-100 py-12 flex justify-center items-center  rounded-2xl">
-                        <img src={image} alt="Book image" className="object-cover w-64 h-64 rounded sm:h-96 lg:col-span-7 " />
+            <div className="container p-0 sm:p-6 mx-auto space-y-6 sm:space-y-12 overflow-hidden">
+                <div className="flex flex-col lg:flex-row gap-4">
+                    <div className="w-[85%] mx-auto lg:w-[72em] bg-gray-100 py-12 flex justify-center items-center  rounded-2xl">
+                        <img src={image} alt="Book image" className="lg:object-cover w-32 h-40 lg:w-64 lg:h-64 rounded sm:h-96 lg:col-span-7 " />
                     </div>
                     <div className="p-6 space-y-4 lg:col-span-5">
                         <div>

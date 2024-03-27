@@ -19,6 +19,8 @@ const NavBer = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52">
                             {navLinks}
+                            <li><a href="">Sign In</a></li>
+                            <li><a href="">Sign Up</a></li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
@@ -28,7 +30,7 @@ const NavBer = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end space-x-4">
+                <div className="navbar-end space-x-4 hidden sm:flex">
                     <a className="btn text-white bg-[#23BE0A]">Sign In</a>
                     <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
                 </div>

@@ -1,7 +1,9 @@
+import errorImg from '../../../src/assets/Images/404-status-code.png';
+
 const ErrorPage = () => {
     return (
         <div className=''>
-            <h1 className='text-5xl'>404</h1>
+            <img className='w-full h-full' src={errorImg} alt="" />
         </div>
     );
 };
