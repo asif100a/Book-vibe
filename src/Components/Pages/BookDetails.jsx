@@ -19,6 +19,10 @@ const BookDetails = () => {
         yearOfPublishing } = book;
     // console.log(bookName);
 
+    const handleReadBook = (book) => {
+        console.log(book);
+    };
+
 
     return (
         <section className="bg-white">
@@ -53,7 +57,7 @@ const BookDetails = () => {
                             </div>
                         </div>
                         <div className="flex justify-start gap-4 pt-6">
-                            <button type="button" className="btn px-6 py-3 text-base font-semibold rounded-md dark:bg-gray-50 border-2 border-[#a89898]">Read</button>
+                            <button onClick={() => handleReadBook(book)} type="button" className="btn px-6 py-3 text-base font-semibold rounded-md dark:bg-gray-50 border-2 border-[#a89898]">Read</button>
                             <button type="button" className="btn px-6 py-3 text-base text-white font-semibold rounded-md bg-[#50B1C9]">Wishlist</button>
                         </div>
                     </div>
