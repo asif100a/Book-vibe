@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { setItemToLS } from "../../Utils/utils";
+import { setItemToLS, setWishListToLS } from "../../Utils/utils";
 
 const BookDetails = () => {
     const bookData = useLoaderData();
@@ -24,7 +24,7 @@ const BookDetails = () => {
     };
 
     const handleWishlist = (book) => {
-        
+        setWishListToLS(book);
     };
 
 

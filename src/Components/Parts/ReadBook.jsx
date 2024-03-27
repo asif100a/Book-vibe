@@ -10,6 +10,7 @@ const ReadBook = ({ book }) => {
         rating,
         category,
         tags,
+        yearOfPublishing, 
         publisher, } = book;
 
     return (
@@ -25,9 +26,10 @@ const ReadBook = ({ book }) => {
                             <p className="text-sm text-gray-400 dark:text-gray-600">By : {author}</p>
                         </div>
 
-                        <div>
+                        <div className="flex gap-4 items-center">
                             <p className="flex gap-3"><span className="font-bold">Tag</span>{tags.map((tag, i) => <span className="bg-gray-100 text-[#23BE0A] font-medium py-[3px] px-3 rounded-full" key={i}>#{tag}</span>)}</p>
-                            <p></p>
+                            
+                            <p><span></span> <span>Year of Publishing: {yearOfPublishing}</span></p>
                         </div>
 
                     </div>
