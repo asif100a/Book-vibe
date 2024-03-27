@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div className="hero  sm:py-20 rounded-3xl bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={coverImg} alt='Book Image' className="w-40 sm:max-w-sm rounded-lg shadow-2xl" />
+                <img src={coverImg} alt='Book Image' className="w-40 sm:w-80 rounded-lg shadow-2xl" />
                 <div>
                     <h1 className="text-3xl sm:text-5xl font-bold w-40 sm:w-[526px]">Books to freshen up your bookshelf</h1>
                    
