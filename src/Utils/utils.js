@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const getItemFromLS = () => {
     let storeRead = [];
     const storedBooks = localStorage.getItem('books');
-    if(storedBooks){
+    if (storedBooks) {
         storeRead = JSON.parse(storedBooks);
     }
     return storeRead;
@@ -13,10 +13,10 @@ const getItemFromLS = () => {
 const setItemToLS = (book) => {
     const books = getItemFromLS();
     const isExist = books.find(savedBook => savedBook.bookId === book.bookId);
-    if(isExist) {
+    if (isExist) {
         toast.warning('The book already listed to "Read books"!')
     }
-    else{
+    else {
         books.push(book);
         localStorage.setItem('books', JSON.stringify(books));
         toast.success('The book listed to "Read books" successfully');
@@ -28,8 +28,8 @@ const setItemToLS = (book) => {
 const getWishListFromLS = () => {
     let storedWish = [];
     const storedWishList = localStorage.getItem('wishlists');
-    if(storedWishList) {
-       storedWish = JSON.parse(storedWishList)
+    if (storedWishList) {
+        storedWish = JSON.parse(storedWishList)
     }
     return storedWish;
 };
@@ -41,17 +41,19 @@ const setWishListToLS = (book) => {
     const readBook = getItemFromLS();
     const findRead = readBook.find(read => read.bookId === book.bookId);
 
-    if(isExist) {
+    if (isExist) {
         toast.warning('The book already listed to "Wishlist Books"!');
     }
-    else if(findRead) {
+    else if (findRead) {
         toast.error('The book already read!')
     }
-    else{
+    else {
         wishList.push(book);
         localStorage.setItem('wishlists', JSON.stringify(wishList));
         toast.success('The book listed to "Wishlist books" successfully');
     }
 };
 
-export {getItemFromLS, setItemToLS, getWishListFromLS, setWishListToLS};
+
+
+export { getItemFromLS, setItemToLS, getWishListFromLS, setWishListToLS  };

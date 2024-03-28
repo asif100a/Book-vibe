@@ -12,8 +12,12 @@ Live link: project-assignment-8.netlify.app
 
 Features and characteristics of this website.:
 
-    * A responsive navber is added & at the left side has a button and middle are three 
-    * Banner part designed according to figma.
+    * In the navber, website name in the left corner, 5 routes in the middle point and 'Sign up', 'Sign in' buttons in  the right corner 
+
+    * In the banner part has a title, a button and a image of book in the right side.
+
     * Here are 11 best books like fiction, romance, fantasty etc.
+
     * By clicking on the book card it shows it's details.
+
     * Anyone can save book to 'read list' if he finished reading or 'wishlist' if he want to read.

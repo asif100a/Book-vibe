@@ -6,6 +6,8 @@ const NavBer = () => {
         <li><NavLink className={"hover:bg-[#23BE0A]"} to={'/'}>Home</NavLink></li>
         <li><NavLink className={"hover:bg-[#23BE0A]"} to={'/listed'}>Listed Books</NavLink></li>
         <li><NavLink className={"hover:bg-[#23BE0A]"} to={'/read'}>Pages to Read</NavLink></li>
+        <li><NavLink className={"hover:bg-[#23BE0A]"} to={'/famous'}>Famous books</NavLink></li>
+        <li><NavLink className={"hover:bg-[#23BE0A]"} to={'/add'}>Add a book</NavLink></li>
     </>
 
 
